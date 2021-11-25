@@ -1,14 +1,3 @@
-const btn = document.getElementById("checkStart");
-const input = document.getElementById("cardNumber");
-btn.addEventListener("click", (e) => {
-  e.preventDefault();
-  if (input.value.length === 0) {
-    alert("please input card number");
-    return;
-  }
-  start(String(input.value).replace(/\D/g, ""));
-});
-
 function displayResult(cardType) {
   console.log(cardType);
 }
@@ -17,9 +6,9 @@ function moonAlgorithm(num) {
   let ch = 0;
   const isOdd = num.length % 2 !== 0;
 
-  if (num === "") return false;
+  if (num === '') return false;
 
-  for (let i = 0; i < num.length; i++) {
+  for (let i = 0; i < num.length; i += 1) {
     let n = parseInt(num[i], 10);
 
     ch += (isOdd | 0) === i % 2 && (n *= 2) > 9 ? n - 9 : n;
@@ -52,10 +41,20 @@ function detectCardType(num) {
   }
 }
 
-function start(num) {
+function checkStart(num) {
   const cardType = detectCardType(num);
   if (moonAlgorithm(num)) {
     displayResult(cardType);
-  } else {
   }
 }
+
+const btn = document.getElementById('checkStart');
+const input = document.getElementById('cardNumber');
+btn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (input.value.length === 0) {
+    alert('please input card number');
+    return;
+  }
+  checkStart(String(input.value).replace(/\D/g, ''));
+});
