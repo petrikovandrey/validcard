@@ -2,7 +2,7 @@ import importScript from './js/app';
 
 test.each([
   ['true for valid ', '4916109847391848', true],
-  ['false for invalid ', '7715964999', false]
+  ['false for invalid ', '7715964999', false],
 ])(('it should be %s'), (_, input, expected) => {
   expect(importScript.moonAlgorithm(input)).toBe(expected);
 });
@@ -16,7 +16,7 @@ test.each([
   ['mastercard', '5491529392439017', 'mastercard'],
   ['mir', '2345678998765432', 'mir'],
   ['unionpay', '7715964999', 'unionpay'],
-  ['jsb', '3531547973796453', 'jsb']
+  ['jsb', '3531547973796453', 'jsb'],
 ])(('it should be %s'), (_, input, expected) => {
   expect(importScript.detectCardType(input)).toBe(expected);
 });
