@@ -1,5 +1,5 @@
+/* eslint-disable no-cond-assign */
 function displayResult(cardType) {
-  console.log(cardType);
   const urlImg = `/src/img/${cardType}.png`;
   document.querySelector('.img-card').style.backgroundImage = `url("${urlImg}")`;
 }
@@ -13,7 +13,7 @@ function moonAlgorithm(num) {
   for (let i = 0; i < num.length; i += 1) {
     let n = parseInt(num[i], 10);
 
-    ch += (isOdd | 0) === i % 2 && (n *= 2) > 9 ? n - 9 : n;
+    ch += (isOdd || 0) === i % 2 && (n *= 2) > 9 ? n - 9 : n;
   }
 
   return ch % 10 === 0;
@@ -41,6 +41,7 @@ function detectCardType(num) {
       return key;
     }
   }
+  return undefined;
 }
 
 function checkStart(num) {
@@ -55,7 +56,6 @@ const input = document.getElementById('cardNumber');
 btn.addEventListener('click', (e) => {
   e.preventDefault();
   if (input.value.length === 0) {
-    alert('please input card number');
     return;
   }
   checkStart(String(input.value).replace(/\D/g, ''));
