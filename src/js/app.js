@@ -1,7 +1,7 @@
 function displayResult(cardType) {
   console.log(cardType);
   const urlImg = `/src/img/${cardType}.png`;
-  document.querySelector('.img-card').style.backgroundImage = `url("${urlImg}")`; 
+  document.querySelector('.img-card').style.backgroundImage = `url("${urlImg}")`;
 }
 
 function moonAlgorithm(num) {
