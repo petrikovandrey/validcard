@@ -2,7 +2,7 @@ import diners from '../img/diners.png';
 import amex from '../img/amex.png';
 import jcb from '../img/jcb.png';
 import visa from '../img/visa.png';
-import visaElectron from '../img/visa_electron.png';
+import visaElectron from '../img/electron.png';
 import maestro from '../img/maestro.png';
 import mastercard from '../img/mastercard.png';
 import discover from '../img/discover.png';
