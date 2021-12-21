@@ -1,6 +1,6 @@
 /* eslint-disable no-cond-assign */
 function displayResult(cardType) {
-  const urlImg = `/src/img/${cardType}.png`;
+  const urlImg = `../img/${cardType}.png`;
   document.querySelector('.img-card').style.backgroundImage = `url("${urlImg}")`;
 }
 

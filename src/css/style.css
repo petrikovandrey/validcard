@@ -1,5 +1,5 @@
 .img-card {
-  background-image: url("/src/img/card.png");
+  background-image: url("../img/card.png");
   float: left;
   width: 25px;
   height: 25px;
