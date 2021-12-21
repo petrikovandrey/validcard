@@ -1,16 +1,16 @@
-import diners from '../img/diners.png';
+import dinersImg from '../img/diners.png';
 import amex from '../img/amex.png';
-import jcb from '../img/jcb.png';
-import visa from '../img/visa.png';
-import visaElectron from '../img/electron.png';
-import maestro from '../img/maestro.png';
-import mastercard from '../img/mastercard.png';
-import discover from '../img/discover.png';
-import mir from '../img/mir.png';
+import jcbImg from '../img/jcb.png';
+import visaImg from '../img/visa.png';
+import electronImg from '../img/electron.png';
+import maestroImg from '../img/maestro.png';
+import mastercardImg from '../img/mastercard.png';
+import discoverImg from '../img/discover.png';
+import mirImg from '../img/mir.png';
 /* eslint-disable no-cond-assign */
 function displayResult(cardType) {
   // const urlImg = `../img/${cardType}.png`;
-  document.querySelector('.img-card').style.backgroundImage = `url("${cardType}")`;
+  document.querySelector('.img-card').style.backgroundImage = `url("${cardType.type}")`;
 }
 
 function moonAlgorithm(num) {
@@ -30,23 +30,23 @@ function moonAlgorithm(num) {
 
 function detectCardType(num) {
   const re = {
-    electron: /^(4026|417500|4405|4508|4844|4913|4917)\d+$/,
-    maestro:
+    electron: { maska: /^(4026|417500|4405|4508|4844|4913|4917)\d+$/, type: electronImg },
+    maestro: {
+      maska:
       /^(5018|5020|5038|5612|5893|6304|6759|6761|6762|6763|0604|6390)\d+$/,
-    dankort: /^(5019)\d+$/,
-    interpayment: /^(636)\d+$/,
-    unionpay: /^(62|88)\d+$/,
-    visa: /^4[0-9]{0,}$/,
-    mastercard: /^5[1-5][0-9]{14}$/,
-    amex: /^3[47][0-9]{13}$/,
-    diners: /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/,
-    discover: /^6(?:011|5[0-9]{2})[0-9]{12}$/,
-    jcb: /^(?:2131|1800|35\d{3})\d{11}$/,
-    mir: /^2[0-9]{0,}/,
+      type: maestroImg,
+    },
+    visa: { maska: /^4[0-9]{0,}$/, type: visaImg },
+    mastercard: { maska: /^5[1-5][0-9]{14}$/, type: mastercardImg },
+    amex: { maska: /^3[47][0-9]{13}$/, type: amex },
+    diners: { maska: /^3(?:0[0-5]|[68][0-9])[0-9]{11}$/, type: dinersImg },
+    discover: { maska: /^6(?:011|5[0-9]{2})[0-9]{12}$/, type: discoverImg },
+    jcb: { maska: /^(?:2131|1800|35\d{3})\d{11}$/, type: jcbImg },
+    mir: { maska: /^2[0-9]{0,}/, type: mirImg },
   };
 
   for (const key in re) {
-    if (re[key].test(num)) {
+    if (re[key].maska.test(num)) {
       return key;
     }
   }
