@@ -1,7 +1,16 @@
+import diners from '../img/diners.png';
+import amex from '../img/amex.png';
+import jcb from '../img/jcb.png';
+import visa from '../img/visa.png';
+import visaElectron from '../img/visa_electron.png';
+import maestro from '../img/maestro.png';
+import mastercard from '../img/mastercard.png';
+import discover from '../img/discover.png';
+import mir from '../img/mir.png';
 /* eslint-disable no-cond-assign */
 function displayResult(cardType) {
-  const urlImg = `../img/${cardType}.png`;
-  document.querySelector('.img-card').style.backgroundImage = `url("${urlImg}")`;
+  // const urlImg = `../img/${cardType}.png`;
+  document.querySelector('.img-card').style.backgroundImage = `url("${cardType}")`;
 }
 
 function moonAlgorithm(num) {
