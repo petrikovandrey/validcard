@@ -9,9 +9,7 @@ import discover from '../img/discover.png';
 import mir from '../img/mir.png';
 /* eslint-disable no-cond-assign */
 function displayResult(cardType) {
-  // const urlImg = `../img/${cardType}.png`;
-  console.log(cardType);
-  document.querySelector('.img-card').src = `("${cardType}")`;
+  document.querySelector('.img-card').src = `${cardType}`;
 }
 
 function moonAlgorithm(num) {

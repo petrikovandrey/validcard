@@ -18,5 +18,5 @@ test.each([
   ['unionpay', '7715964999', 'unionpay'],
   ['jsb', '3531547973796453', 'jsb'],
 ])(('it should be %s'), (_, input, expected) => {
-  expect(importScript.detectCardType(input)).toBe(expected);
+  expect(importScript.detectCardType(input)).toBe(expected.mask);
 });
